@@ -1,0 +1,12 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),request=require('supertest');
+const {createApp}=require('../../src/api/app'),{loadConfig}=require('../../src/config'),{ingest}=require('../../src/knowledge/ingest');
+const {session}=require('../helpers');
+test('external adapter requires purpose consent, receives evidence-only payload, dangerous output discarded',async t=>{process.env.NODE_ENV='test';let calls=0,payload;
+ const config=loadConfig({USE_MOCK_LLM:'false',OPENAI_API_KEY:'synthetic-not-real'}),llm={isMock:false,async generate(input){calls++;payload=input;return {text:'保证赔付 https://evil.invalid'};}};
+ const app=createApp({config,llm}),api=request(app);t.after(()=>app.locals.db.close());ingest(app.locals.db,{id:'SYN-CONCEPT',title:'医疗险科普',content:'合成医疗险资料仅用于测试，不是现实合同。核验医疗费用责任和免责条件。',source_uri:'synthetic://concept',synthetic:true,layer:'concepts'},{syntheticApproval:true});
+ const s=await session(api,'individual','explain'),p='/api/v1/sessions/'+s.sessionId,h={Authorization:'Bearer '+s.accessToken};let r=await api.post(p+'/messages').set(h).send({expectedRevision:0,text:'医疗险科普'}).expect(200);assert.equal(calls,0);assert.equal(r.body.provenance.reason,'CONSENT_REQUIRED');
+ await api.post(p+'/consents').set(h).send({expectedRevision:1,purpose:'external_llm',granted:true,noticeVersion:'v1'}).expect(200);
+ r=await api.post(p+'/messages').set(h).send({expectedRevision:2,text:'医疗险科普'}).expect(200);assert.equal(calls,1);assert.ok(payload.user.startsWith('请解释这些已审核证据'));assert.ok(!r.body.assistantMessage.includes('evil.invalid'));
+ await api.post(p+'/consents').set(h).send({expectedRevision:3,purpose:'external_llm',granted:false,noticeVersion:'v1'}).expect(200);
+ await api.post(p+'/messages').set(h).send({expectedRevision:4,text:'医疗险科普'}).expect(200);assert.equal(calls,1);
+});

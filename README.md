@@ -22,7 +22,7 @@
 #### Step 1：克隆项目
 
 ```bash
-git clone https://github.com/AEI728/-Agent.git
+git clone https://github.com/AEI728/Insurance-Advisory-Agent.git
 cd ./-Agent
 ```
 
@@ -273,3 +273,15 @@ npm run check:knowledge
 - [Lucide](https://lucide.dev/)：前端图标库
 
 Made with ❤️ for clearer and more responsible insurance planning.
+
+## P1 服务端工作流（2026-11-10）
+
+新增本地会话鉴权、加密 SQLite、服务端画像门槛、冲突确认、成员保单归属、FTS5 中文检索与审核过滤、预算上限情景、PDF 文本提取、报告导出和待人工核验工单。旧 `/api/chat` 和导入端点返回410，请使用新版首页。
+
+- 快速启动：`npm ci` 后 `npm start`，本机地址以终端为准。未配稳定加密密钥时使用内存库；不要覆盖已有 `.env`。
+- 完整流程和持久化：[运行手册](docs/runbook.md)；[API](docs/api.md)；[数据治理](docs/data-governance.md)；[评测](docs/evaluation.md)；[实施证据](docs/implementation-report.md)。
+- `npm run ci:verify` 执行静态检查、单元/接口/浏览器测试及合成评测；`npm run smoke` 做真实HTTP冒烟。
+- 原知识默认待审核，缺证据时阻断详细报告。`kb:demo` 需显式开发环境开关，仅导入标记SYN的合成资料。
+- 仅开发/受控演示：没有正式身份体系、专业审核、在线客服或产品费率。生产启动被阻断。Mock指标不代表保险建议专业准确率。
+
+最终本机验收：`npm ci`、`npm run ci:verify` 与 `scripts/smoke.sh` 已实测通过，14项单元、29项接口、4项浏览器、82条合成评测。Windows默认检测系统Edge，其他环境默认Chromium。所有数字仅代表本仓库合成回归测试；完整失败及修正记录见实施报告。

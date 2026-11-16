@@ -1,0 +1,394 @@
+[
+  {
+    "id": "SYN-RULE-BUDGET",
+    "title": "合成演示：保障预算规则",
+    "content": "合成演示资料：保障规划先核验医疗、意外、重疾、寿险的经济责任。预算信封只是年度保费支出上限，不是产品报价。",
+    "layer": "rules",
+    "source_uri": "synthetic://budget-v1",
+    "source_type": "synthetic_fixture",
+    "synthetic": true,
+    "fact_ids": [
+      "budget_envelope"
+    ]
+  },
+  {
+    "id": "SYN-CLAUSE-0",
+    "title": "合成T0 保证续保",
+    "content": "第一条 合成T0 保证续保：仅用作技术测试，不是真实可投保险产品。保证续保测试值为1年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T0",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T0",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "renewal_period"
+    ],
+    "fact_values": {
+      "renewal_period": "1年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-1",
+    "title": "合成T1 等待期",
+    "content": "第一条 合成T1 等待期：仅用作技术测试，不是真实可投保险产品。等待期测试值为2年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T1",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T1",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_1"
+    ],
+    "fact_values": {
+      "fact_1": "2年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-2",
+    "title": "合成T2 责任免除",
+    "content": "第一条 合成T2 责任免除：仅用作技术测试，不是真实可投保险产品。责任免除测试值为3年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T2",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T2",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_2"
+    ],
+    "fact_values": {
+      "fact_2": "3年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-3",
+    "title": "合成T3 住院津贴",
+    "content": "第一条 合成T3 住院津贴：仅用作技术测试，不是真实可投保险产品。住院津贴测试值为4年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T3",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T3",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_3"
+    ],
+    "fact_values": {
+      "fact_3": "4年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-4",
+    "title": "合成T4 门诊手术",
+    "content": "第一条 合成T4 门诊手术：仅用作技术测试，不是真实可投保险产品。门诊手术测试值为5年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T4",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T4",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_4"
+    ],
+    "fact_values": {
+      "fact_4": "5年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-5",
+    "title": "合成T5 指定医院",
+    "content": "第一条 合成T5 指定医院：仅用作技术测试，不是真实可投保险产品。指定医院测试值为6年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T5",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T5",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_5"
+    ],
+    "fact_values": {
+      "fact_5": "6年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-6",
+    "title": "合成T6 外购药品",
+    "content": "第一条 合成T6 外购药品：仅用作技术测试，不是真实可投保险产品。外购药品测试值为7年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T6",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T6",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_6"
+    ],
+    "fact_values": {
+      "fact_6": "7年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-7",
+    "title": "合成T7 免赔额度",
+    "content": "第一条 合成T7 免赔额度：仅用作技术测试，不是真实可投保险产品。免赔额度测试值为8年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T7",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T7",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_7"
+    ],
+    "fact_values": {
+      "fact_7": "8年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-8",
+    "title": "合成T8 赔付比例",
+    "content": "第一条 合成T8 赔付比例：仅用作技术测试，不是真实可投保险产品。赔付比例测试值为9年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T8",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T8",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_8"
+    ],
+    "fact_values": {
+      "fact_8": "9年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-9",
+    "title": "合成T9 职业限制",
+    "content": "第一条 合成T9 职业限制：仅用作技术测试，不是真实可投保险产品。职业限制测试值为10年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T9",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T9",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_9"
+    ],
+    "fact_values": {
+      "fact_9": "10年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-10",
+    "title": "合成T10 健康告知",
+    "content": "第一条 合成T10 健康告知：仅用作技术测试，不是真实可投保险产品。健康告知测试值为11年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T10",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T10",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_10"
+    ],
+    "fact_values": {
+      "fact_10": "11年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-11",
+    "title": "合成T11 现金价值",
+    "content": "第一条 合成T11 现金价值：仅用作技术测试，不是真实可投保险产品。现金价值测试值为12年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T11",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T11",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_11"
+    ],
+    "fact_values": {
+      "fact_11": "12年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-12",
+    "title": "合成T12 保险期间",
+    "content": "第一条 合成T12 保险期间：仅用作技术测试，不是真实可投保险产品。保险期间测试值为13年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T12",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T12",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_12"
+    ],
+    "fact_values": {
+      "fact_12": "13年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-13",
+    "title": "合成T13 缴费期间",
+    "content": "第一条 合成T13 缴费期间：仅用作技术测试，不是真实可投保险产品。缴费期间测试值为14年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T13",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T13",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_13"
+    ],
+    "fact_values": {
+      "fact_13": "14年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-14",
+    "title": "合成T14 受益人",
+    "content": "第一条 合成T14 受益人：仅用作技术测试，不是真实可投保险产品。受益人测试值为15年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T14",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T14",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_14"
+    ],
+    "fact_values": {
+      "fact_14": "15年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-15",
+    "title": "合成T15 犹豫期",
+    "content": "第一条 合成T15 犹豫期：仅用作技术测试，不是真实可投保险产品。犹豫期测试值为16年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T15",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T15",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_15"
+    ],
+    "fact_values": {
+      "fact_15": "16年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-16",
+    "title": "合成T16 宽限期",
+    "content": "第一条 合成T16 宽限期：仅用作技术测试，不是真实可投保险产品。宽限期测试值为17年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T16",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T16",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_16"
+    ],
+    "fact_values": {
+      "fact_16": "17年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-17",
+    "title": "合成T17 合同解除",
+    "content": "第一条 合成T17 合同解除：仅用作技术测试，不是真实可投保险产品。合同解除测试值为18年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T17",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T17",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_17"
+    ],
+    "fact_values": {
+      "fact_17": "18年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-18",
+    "title": "合成T18 意外定义",
+    "content": "第一条 合成T18 意外定义：仅用作技术测试，不是真实可投保险产品。意外定义测试值为19年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T18",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T18",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_18"
+    ],
+    "fact_values": {
+      "fact_18": "19年"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "SYN-CLAUSE-19",
+    "title": "合成T19 伤残等级",
+    "content": "第一条 合成T19 伤残等级：仅用作技术测试，不是真实可投保险产品。伤残等级测试值为20年，适用合成条款2026-test。",
+    "layer": "clauses",
+    "source_uri": "synthetic://T19",
+    "source_type": "synthetic_fixture",
+    "jurisdiction": "CN",
+    "product_id": "SYN-T19",
+    "clause_version": "2026-test",
+    "valid_from": "2026-01-01",
+    "fact_ids": [
+      "fact_19"
+    ],
+    "fact_values": {
+      "fact_19": "20年"
+    },
+    "synthetic": true
+  }
+]

@@ -1,0 +1,4 @@
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),crypto=require('node:crypto');
+async function main(){const {db,config}=require('./context').context(),dir=fs.mkdtempSync(path.join(os.tmpdir(),'insurance-backup-')),temp=path.join(dir,'snapshot.sqlite'),out=path.resolve(process.argv[2]||'data/backup.enc');
+try{await db.backup(temp);const iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',config.key,iv);const encrypted=Buffer.concat([cipher.update(fs.readFileSync(temp)),cipher.final()]);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,Buffer.concat([iv,cipher.getAuthTag(),encrypted]),{mode:0o600});console.log('Encrypted online backup created');}finally{db.close();fs.rmSync(dir,{recursive:true,force:true});}}
+main().catch(e=>{console.error(e.message);process.exitCode=1;});
