@@ -19,8 +19,7 @@
     "eval": "node scripts/eval.js --dataset tests/fixtures --out artifacts/eval",
     "ci:verify": "npm run check && npm run test:unit && npm run test:integration && npm run test:e2e && npm run eval",
     "smoke": "node scripts/smoke.js",
-    "backup": "node scripts/backup.js",
-    "audit:publication": "node scripts/audit-publication.js"
+    "backup": "node scripts/backup.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

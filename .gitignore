@@ -18,6 +18,10 @@ playwright-report/
 *.pfx
 *.log
 docs/06-职业发展/
+docs/implementation-report.md
+docs/publication-audit.md
+docs/adr/001-p1-local.md
+scripts/audit-publication.js
 knowledge-base/*
 !knowledge-base/.gitkeep
 !knowledge-base/*.json
