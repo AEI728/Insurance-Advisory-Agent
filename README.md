@@ -96,7 +96,6 @@ KNOWLEDGE_BASE_PATH=./knowledge-base
 RAG_TOP_K=4
 ```
 
-不要将 API Key 写入 `index.html`、`app.js` 或其他浏览器端文件，也不要提交 `.env`。
 
 ## 🧠 Agent 工作流程
 
